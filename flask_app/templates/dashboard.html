@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Plug - Car Booking Company</title>
+    <!-- linking a css style sheet -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- linking a javascript file -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <!-- linking an image -->
+    <!-- <img src="{{ url_for('static', filename='img/my_img.png') }}"> -->
+    <!-- 
+ favicon
+-->
+    <link rel="shortcut icon" href="{{url_for('static', filename='img/favicon.svg')}}" type="image/svg+xml">
+    <!-- 
+ css link
+-->
+    <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
+    <!-- 
+ font link
+-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body id="top">
+
+    <header class="header" data-header>
+
+        <div class="overlay" data-overlay></div>
+        <div class="header-top">
+            <div class="container">
+
+                <a href="tel:+14156238048" class="helpline-box">
+
+                    <div class="icon-box">
+                        <ion-icon name="call-outline"></ion-icon>
+                    </div>
+
+                    <div class="wrapper">
+                        <p class="helpline-title">For Further Assistance :</p>
+
+                        <p class="heapline-number">+1 (415)623-8048 </p>
+                    </div>
+
+                </a>
+                <a href="#" class="logo">
+                    <img src="{{url_for('static', filename='img/logo.svg')}}" alt="Car Plug logo">
+                </a>
+
+                <div class="header-btn-group">
+
+                    <button class="search-btn" aria-label="Search">
+                        <ion-icon name="search"></ion-icon>
+                    </button>
+
+                    <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+                        <ion-icon name="menu-outline"></ion-icon>
+                    </button>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <div class="container">
+
+                <ul class="social-list">
+
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-youtube"></ion-icon>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <nav class="navbar" data-navbar>
+
+                    <div class="navbar-top">
+
+                        <a href="#" class="logo">
+                            <!-- <img src="./assets/images/logo-blue.svg" alt="Car Plug logo"> -->
+                            <img class="menuimg" src="{{ url_for('static', filename='img/car-logo-red2.png') }}" alt="Car Plug logo">
+
+                        </a>
+                        <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+                            <ion-icon name="close-outline"></ion-icon>
+                        </button>
+
+                    </div>
+
+                    <ul class="navbar-list">
+
+                        <li>
+                            <a href="#home" class="navbar-link" data-nav-link>home</a>
+                        </li>
+                        <li>
+                            <a href="#about us" class="navbar-link" data-nav-link>about us</a>
+                        </li>
+                        <li>
+                            <a href="#locations" class="navbar-link" data-nav-link>locations</a>
+                        </li>
+                        <li>
+                            <a href="#package" class="navbar-link" data-nav-link>packages</a>
+                        </li>
+                        <li>
+                            <a href="#gallery" class="navbar-link" data-nav-link>gallery</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="navbar-link" data-nav-link>contact us</a>
+                        </li>
+
+                    </ul>
+
+
+                </nav>
+
+
+                <button class="btn btn-primary">Book Now</button>
+                <a class="btn btn-primary" href="/logout">logout</a>
+
+            </div>
+        </div>
+
+
+    </header>
+
+    <main>
+        <article>
+            <!-- 
+ #HERO
+-->
+            <section class="hero" id="home">
+                <div class="container">
+                    <h2 class="h1 hero-title">Explore & travel with style</h2>
+                    <p class="hero-text">
+                        Going on vacation, but traveling on foot? <br>
+                        Check out our inventory and book with us! <br>
+                        Don't have the budget for it? it's <strong>OKAY</strong>, book now & <strong>PAY later</strong>,
+                        thats right <strong>PAY LATER!</strong>
+                    </p>
+
+                    <div class="btn-group">
+                        <button class="btn btn-primary">Learn more</button>
+
+                        <button class="btn btn-secondary">Book now</button>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- 
+        #booking search
+        -->
+
+            <section class="booking-search">
+
+                <div class="container">
+                    <form action="" class="booking-search-form">
+                        <div class="input-wrapper">
+                            <label for="cars" class="input-label">Search our Inventory</label>
+
+                            <input type="text" name="cars" id="cars" required placeholder="Enter Vehicle Name"
+                                class="input-field">
+
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="drivers" class="input-label">Drivers</label>
+
+                            <input type="number" name="drivers" id="drivers" required placeholder="Enter No. of Drivers"
+                                class="input-field">
+
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="checkin" class="input-label">Checkin Date</label>
+
+                            <input type="date" name="checkin" id="checkin" required class="input-field">
+
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="checkout" class="input-label">Checkout Date</label>
+
+                            <input type="date" name="checkout" id="checkout" required class="input-field">
+                        </div>
+
+                        <button type="submit" class="btn btn-secondary">book</button>
+
+                    </form>
+                </div>
+
+            </section>
+
+            <!-- 
+        #popular
+        -->
+
+            <section class="popular" id="cars">
+                <div class="container">
+                    <p class="section-subtitle"> Discover your adrenaline</p>
+                    <h2 class="h2 section-title">Popular Cars</h2>
+                    <p class="section-text">
+                        Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum.
+                        Vestibulum cumque laudantium. Sit ornare
+                        mollitia tenetur, aptent.
+                    </p>
+
+                    <ul class="popular-list">
+                        <li>
+                            <div class="popular-card">
+                                <figure class="card-img">
+                                    <img src="{{url_for('static', filename='img/IMG_3881.JPG')}}" alt="camaro" loading="lazy">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-rating">
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                    </div>
+                                    <p class="card-subtitle">
+                                        <a href="#">Camaro</a>
+                                    </p>
+
+                                    <h3 class="h3 card-title">
+                                        <a href="#">SS2</a>
+                                    </h3>
+
+                                    <p class="card-text">
+                                        Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="popular-card">
+                                <figure class="card-img">
+                                    <img src="{{url_for('static', filename='img/IMG_2208.JPG')}}" alt="gtr" loading="lazy">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-rating">
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                    </div>
+                                    <p class="card-subtitle">
+                                        <a href="#">GTR</a>
+                                    </p>
+
+                                    <h3 class="h3 card-title">
+                                        <a href="#">R35</a>
+                                    </h3>
+
+                                    <p class="card-text">
+                                        Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="popular-card">
+                                <figure class="card-img">
+                                    <img src="{{url_for('static', filename='img/IMG_2179.JPG')}}" alt="camaro" loading="lazy">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-rating">
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                    </div>
+                                    <p class="card-subtitle">
+                                        <a href="#">Lamborghini</a>
+                                    </p>
+
+                                    <h3 class="h3 card-title">
+                                        <a href="#">Huracan</a>
+                                    </h3>
+
+                                    <p class="card-text">
+                                        Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                    <button class="btn btn-primary">More Vehicles</button>
+
+                </div>
+            </section>
+
+
+
+            <!-- 
+        #packages
+        -->
+            <section class="package" id="package">
+                <div class="container">
+
+                    <p class="section-subtitle"> Explore Our Packages</p>
+                    <h2 class="h2 section-title">Most Popular</h2>
+                    <p class="section-text">
+                        Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum.
+                        Vestibulum cumque laudantium.
+                        Sit ornare
+                        mollitia tenetur, aptent.
+                    </p>
+
+                    <ul class="package-list">
+
+                        <li>
+                            <div class="package-card">
+
+                                <figure class="card-banner">
+                                    <img src="{{url_for('static', filename='img/IMG_3709.jpg')}}" alt="parking lot" loading="lazy">
+                                </figure>
+
+                                <div class="card-content">
+                                    <h3 class="h3 card-title">Enjoy your holidays with some horsepower</h3>
+                                    <p class="card-text">
+                                        Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est
+                                        aliquet porttitor! Eaque,
+                                        cras, aspernatur.
+                                    </p>
+
+                                    <ul class="card-meta-list">
+
+                                        <li class="card-meta-item">
+                                            <div class="meta-box">
+                                                <ion-icon name="time"></ion-icon>
+
+                                                <p class="text">1 Week</p>
+                                            </div>
+                                        </li>
+                                        <li class="card-meta-item">
+                                            <div class="meta-box">
+                                                <ion-icon name="people"></ion-icon>
+
+                                                <p class="text">2 Drivers</p>
+                                            </div>
+                                        </li>
+                                        <li class="card-meta-item">
+                                            <div class="meta-box">
+                                                <ion-icon name="location"></ion-icon>
+
+                                                <p class="text">Mexico City</p>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+
+                                </div>
+
+                                <div class="card-price">
+
+                                    <div class="wrapper">
+
+                                        <p class="reviews">(2 reviews)</p>
+                                        <div class="card-rating">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                        </div>
+                                    </div>
+
+
+                                    <p class="price">
+                                        $1,000 USD
+                                        <span>in total</span>
+                                    </p>
+
+                                    <button class="btn btn-secondary">Book Now</button>
+
+                                </div>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="package-card">
+
+                                <figure class="card-banner">
+                                    <img src="{{url_for('static', filename='img/IMG_2168.jpg')}}" alt="gtr and lambo" loading="lazy">
+                                </figure>
+
+                                <div class="card-content">
+                                    <h3 class="h3 card-title">Enjoy your holiday with luxury and speed</h3>
+                                    <p class="card-text">
+                                        Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est
+                                        aliquet porttitor! Eaque,
+                                        cras, aspernatur.
+                                    </p>
+
+                                    <ul class="card-meta-list">
+
+                                        <li class="card-meta-item">
+                                            <div class="meta-box">
+                                                <ion-icon name="time"></ion-icon>
+
+                                                <p class="text">2 Weeks</p>
+                                            </div>
+                                        </li>
+                                        <li class="card-meta-item">
+                                            <div class="meta-box">
+                                                <ion-icon name="people"></ion-icon>
+
+                                                <p class="text">2 Drivers</p>
+                                            </div>
+                                        </li>
+                                        <li class="card-meta-item">
+                                            <div class="meta-box">
+                                                <ion-icon name="location"></ion-icon>
+
+                                                <p class="text">Los Angeles</p>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+
+                                </div>
+
+                                <div class="card-price">
+
+                                    <div class="wrapper">
+
+                                        <p class="reviews">(5 reviews)</p>
+                                        <div class="card-rating">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                        </div>
+                                    </div>
+
+
+                                    <p class="price">
+                                        $2,500 USD
+                                        <span>in total</span>
+                                    </p>
+
+                                    <button class="btn btn-secondary">Book Now</button>
+
+                                </div>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="package-card">
+
+                                <figure class="card-banner">
+                                    <img src="{{url_for('static', filename='img/IMG_5181.JPG')}}" alt="camaro and truck" loading="lazy">
+                                </figure>
+
+                                <div class="card-content">
+                                    <h3 class="h3 card-title">Enjoy your holiday with some true strength</h3>
+                                    <p class="card-text">
+                                        Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est
+                                        aliquet porttitor! Eaque,
+                                        cras, aspernatur.
+                                    </p>
+
+                                    <ul class="card-meta-list">
+
+                                        <li class="card-meta-item">
+                                            <div class="meta-box">
+                                                <ion-icon name="time"></ion-icon>
+
+                                                <p class="text">3 Weeks</p>
+                                            </div>
+                                        </li>
+                                        <li class="card-meta-item">
+                                            <div class="meta-box">
+                                                <ion-icon name="people"></ion-icon>
+
+                                                <p class="text">2 Drivers</p>
+                                            </div>
+                                        </li>
+                                        <li class="card-meta-item">
+                                            <div class="meta-box">
+                                                <ion-icon name="location"></ion-icon>
+
+                                                <p class="text">San Francisco</p>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+
+                                </div>
+
+                                <div class="card-price">
+
+                                    <div class="wrapper">
+
+                                        <p class="reviews">(2 reviews)</p>
+                                        <div class="card-rating">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                        </div>
+                                    </div>
+
+
+                                    <p class="price">
+                                        $1,500 USD
+                                        <span>in total</span>
+                                    </p>
+
+                                    <button class="btn btn-secondary">Book Now</button>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+
+                    </ul>
+
+                    <button class="btn btn-primary">View All Packages</button>
+
+                </div>
+            </section>
+
+
+
+
+            <!-- 
+        #gallery
+        -->
+            <section class="gallery" id="gallery">
+
+                <div class="container">
+
+                    <p class="section-subtitle"> Gallery</p>
+                    <h2 class="h2 section-title">Photos from our clients</h2>
+                    <p class="section-text">
+                        Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum.
+                        Vestibulum cumque laudantium.
+                        Sit ornare
+                        mollitia tenetur, aptent.
+                    </p>
+
+                    <ul class="gallery-list">
+
+                        <li class="gallery-item">
+                            <figure class="gallery-image">
+                                <img src="{{url_for('static', filename='img/IMG_2181.jpg')}}" alt="gallery">
+                            </figure>
+                        </li>
+                        <li class="gallery-item">
+                            <figure class="gallery-image">
+                                <img src="{{url_for('static', filename='img/IMG_2183.jpg')}}" alt="gallery">
+                            </figure>
+                        </li>
+                        <li class="gallery-item">
+                            <figure class="gallery-image">
+                                <img src="{{url_for('static', filename='img/IMG_2213.jpg')}}" alt="gallery">
+                            </figure>
+                        </li>
+                        <li class="gallery-item">
+                            <figure class="gallery-image">
+                                <img src="{{url_for('static', filename='img/IMG_2179.jpg')}}" alt="gallery">
+                            </figure>
+                        </li>
+                        <li class="gallery-item">
+                            <figure class="gallery-image">
+                                <img src="{{url_for('static', filename='img/IMG_3709.jpg')}}" alt="gallery">
+                            </figure>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+
+            <!-- 
+        #contact
+        -->
+            <section class="cta" id="contact">
+                <div class="container">
+                    <div class="cta-content">
+                        <p class="section-subtitle"> So what's it going to be?</p>
+                        <h2 class="h2 section-title">You've scrolled this far, so why not not go on the road as far?
+                        </h2>
+                        <p class="section-text">
+                            Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum.
+                            Vestibulum cumque laudantium.
+                            Sit ornare
+                            mollitia tenetur, aptent.
+                        </p>
+                    </div>
+
+                    <button class="btn btn-secondary">Contact Us</button>
+
+                </div>
+            </section>
+
+
+        </article>
+    </main>
+
+
+
+    <!-- 
+footer
+-->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-brand">
+
+                    <a href="#" class="logo">
+                        <img src="{{url_for('static', filename='img/logo.svg')}}" alt="carplug logo">
+                    </a>
+                    <p class="footer-text">
+                        some random body of text containgin more text after this text
+                        some random body of text containgin more text after this text
+                        some random body of text containgin more text after this text
+                    </p>
+
+                </div>
+
+                <div class="footer-contact">
+                    <h4 class="contact-title">
+                        Contact Us
+                    </h4>
+                    <p class="contact-text">
+                        Please feel free to reach out to us about anyu inquiries or question!
+                    </p>
+                    <ul>
+
+                        <li class="contact-item">
+                            <ion-icon name="call-outline"></ion-icon>
+                            <a href="tel:+14156238048" class="contact-link">+1 (415) 623-8048</a>
+                        </li>
+                        <li class="contact-item">
+                            <ion-icon name="mail-outline"></ion-icon>
+                            <a href="mailto:nyrojaen@gmail.com" class="contact-link">nyrojaen@gmail.com</a>
+                        </li>
+
+                        <li class="contact-item">
+                            <ion-icon name="location-outline"></ion-icon>
+                            <address> San Francisco, California </address>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-form">
+
+                    <p class="form-text">
+                        Subscribe our newsletter for more update & news
+                    </p>
+
+                    <form action="" class="form-wrapper">
+                        <input type="email" name="email" class="input-field" placeholder="Enter Your Email">
+
+                        <button type="submit" class="btn btn-secondary">Subscribe</button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright">
+                    &copy; 2023 <a href="">Car Plug</a>. All rights reserved
+                </p>
+
+                <ul class="footer-bottom-list">
+
+                    <li>
+                        <a href="#" class="footer-bottom-link">Privacy Policy </a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-bottom-link">Terms & Condition </a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-bottom-link">FAQ </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+
+    </footer>
+
+
+    <!-- 
+got to top
+-->
+
+
+    <a href="#top" class="go-top" data-go-top>
+        <ion-icon name="chevron-up-outline"></ion-icon>
+    </a>
+
+
+
+
+
+    <!-- 
+ js link
+-->
+    <!-- <script src="./assets/js/script.js"></script> -->
+    <!-- 
+ icon link
+-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
